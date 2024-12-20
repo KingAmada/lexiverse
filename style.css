@@ -17,7 +17,7 @@ body {
     padding: 30px;
     border-radius: 10px;
     width: 85%;
-    max-width: 800px;
+    max-width: 1000px; /* Increased max width */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -63,13 +63,14 @@ header h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
-
-.setting {
-    width: calc(50% - 10px);
     margin-bottom: 15px;
 }
 
+
+.setting {
+  width: 100%;
+  margin-bottom: 15px;
+}
 .setting label {
     display: block;
     margin-bottom: 5px;
@@ -82,12 +83,60 @@ header h1 {
     color: white;
     transition: background-color 0.3s ease;
     border: none;
+    width: auto;
+    align-self: flex-end;
 }
 
 .setting button:hover {
     background-color: #2980b9;
 }
 
+/* Lawyer Profiles Styles */
+.lawyer-profiles {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.lawyer-card {
+    width: calc(33.333% - 10px);
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lawyer-card:hover {
+    background: #f0f0f0;
+}
+
+.lawyer-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.lawyer-card.selected {
+    background: #3498db;
+    color: white;
+}
+
+.lawyer-card.selected:hover {
+    background: #3498db;
+}
+
+.lawyer-card p {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
 
 /* Discussion Section Styles */
 .discussion-section {
@@ -174,4 +223,19 @@ header h1 {
     background: #ffdd59;
     border-color: #555;
     color: #222;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .app-container {
+        width: 95%;
+    }
+
+    .setting {
+        width: 100%;
+    }
+
+   .lawyer-card {
+        width: calc(50% - 10px);
+    }
 }
