@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, #e0eafc, #cfdef3);
@@ -10,6 +10,7 @@ body {
     align-items: center;
     min-height: 100vh;
     transition: background 0.3s ease;
+    overflow-x: hidden;
 }
 
 .app-container {
@@ -17,16 +18,32 @@ body {
     padding: 30px;
     border-radius: 10px;
     width: 85%;
-    max-width: 1000px; /* Increased max width */
+    max-width: 1000px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 header h1 {
     text-align: center;
     margin-bottom: 30px;
     color: #3498db;
+     animation: slideInDown 0.5s ease-in-out;
 }
 
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* Input Section Styles */
 .input-section {
     display: flex;
@@ -44,6 +61,7 @@ header h1 {
     background: #f9f9f9;
     color: #333;
     font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .input-section textarea:focus,
@@ -51,8 +69,11 @@ header h1 {
 .setting button:focus {
     outline: none;
     border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
-
+.input-section textarea::placeholder {
+    color: rgba(51, 51, 51, 0.7);
+ }
 .input-section textarea {
     resize: vertical;
     min-height: 100px;
@@ -75,13 +96,14 @@ header h1 {
     display: block;
     margin-bottom: 5px;
     color: #555;
+     animation: fadeIn 0.5s ease-in-out;
 }
 
 .setting button {
     cursor: pointer;
     background-color: #3498db;
     color: white;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.1s ease;
     border: none;
     width: auto;
     align-self: flex-end;
@@ -89,12 +111,12 @@ header h1 {
 
 .setting button:hover {
     background-color: #2980b9;
+    transform: scale(1.05);
 }
-
 
 /* Lawyer Profiles Styles */
 .lawyer-profiles {
-  display: flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 15px;
@@ -107,7 +129,7 @@ header h1 {
     border: 1px solid #ddd;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, transform 0.1s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -115,6 +137,7 @@ header h1 {
 
 .lawyer-card:hover {
     background: #f0f0f0;
+     transform: scale(1.03);
 }
 
 .lawyer-card img {
@@ -123,52 +146,63 @@ header h1 {
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+.lawyer-card img:hover {
+    transform: scale(1.1);
 }
 
 .lawyer-card.selected {
     background: #3498db;
     color: white;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
-
 .lawyer-card.selected:hover {
-    background: #3498db;
+   background: #3498db;
 }
-
 .lawyer-card p {
     font-size: 0.9rem;
     margin-top: 5px;
 }
-
- /* Mood Sliders Styles */
+/* Mood Sliders Styles */
 .mood-sliders {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
     padding: 0 20px;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .mood-sliders h2 {
     margin-bottom: 10px;
     color: #3498db;
+    animation: slideInDown 0.5s ease-in-out;
 }
-
 .mood-slider {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .mood-slider label {
     margin-right: 10px;
+    font-size: 0.9rem;
 }
 .mood-slider input[type="range"] {
   width: 100%;
+  transition: all 0.2s ease;
+}
+.mood-slider input[type="range"]:focus {
+     box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+     outline: none;
 }
 
 /* Progress Bar Styles */
 .progress-bar-container {
     margin-bottom: 20px;
     padding: 0 20px;
+     animation: fadeIn 0.5s ease-in-out;
 }
 
 .progress-bar {
@@ -189,6 +223,7 @@ header h1 {
     background-color: #f0f0f0;
     position: relative;
     padding: 8px 0;
+    transition: background-color 0.3s ease;
 }
 
 .phase.active {
@@ -199,24 +234,27 @@ header h1 {
 /* What if section*/
 #what-if-section {
     margin-bottom: 20px;
-     padding: 0 20px;
+    padding: 0 20px;
+    animation: fadeIn 0.5s ease-in-out;
 }
 #what-if-section h2 {
      margin-bottom: 15px;
     color: #3498db;
+    animation: slideInDown 0.5s ease-in-out;
 }
 #what-if-controls button {
-     background-color: #e74c3c;
-     color: white;
+    background-color: #e74c3c;
+    color: white;
     cursor: pointer;
-     transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.1s ease;
     border: none;
-   padding: 8px;
+    padding: 8px;
     border-radius: 5px;
     margin-right: 10px;
 }
 #what-if-controls button:hover {
     background-color: #c0392b;
+    transform: scale(1.05);
 }
 
 /* Discussion Section Styles */
@@ -229,19 +267,45 @@ header h1 {
 .discussion-section h2 {
     margin-bottom: 15px;
     color: #3498db;
+    animation: slideInDown 0.5s ease-in-out;
 }
 
+.discussion-section p {
+     line-height: 1.6;
+     margin-bottom: 10px;
+     animation: fadeIn 0.5s ease-in-out;
+ }
+
+ .discussion-section .audio-button {
+      background-color: #2ecc71;
+      color: white;
+    cursor: pointer;
+     transition: background-color 0.3s ease, transform 0.1s ease;
+     border: none;
+     padding: 5px 10px;
+      border-radius: 3px;
+      margin-left: 5px;
+ }
+ .discussion-section .audio-button:hover {
+      background-color: #27ae60;
+      transform: scale(1.03);
+ }
 /* Legal research section styles */
 #research-section {
-     margin-top: 20px;
-     border-top: 1px solid #ddd;
-     padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    animation: fadeIn 0.5s ease-in-out;
 }
 #research-section h2 {
     margin-bottom: 15px;
     color: #3498db;
+     animation: slideInDown 0.5s ease-in-out;
 }
-
+#research-section p{
+     line-height: 1.6;
+     margin-bottom: 10px;
+ }
 /* Hidden Class */
 .hidden {
     display: none;
@@ -252,19 +316,17 @@ header h1 {
     background: linear-gradient(to right, #2c3e50, #34495e);
     color: #ecf0f1;
 }
-
 .dark .app-container {
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
-
 .dark header h1,
 .dark .discussion-section h2,
 .dark #what-if-section h2,
-.dark #research-section h2 {
+.dark #research-section h2,
+.dark .mood-sliders h2{
     color: #3498db;
 }
-
 .dark .input-section textarea,
 .dark .input-section select,
 .dark .setting button {
@@ -277,19 +339,17 @@ header h1 {
     background: linear-gradient(to right, #00416A, #E4E5E6);
     color: #ecf0f1;
 }
-
 .oceanic .app-container {
     background: rgba(2, 37, 64, 0.8);
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
-
 .oceanic header h1,
 .oceanic .discussion-section h2,
 .oceanic #what-if-section h2,
-.oceanic #research-section h2 {
+.oceanic #research-section h2,
+.oceanic .mood-sliders h2 {
     color: #7ed4fb;
 }
-
 .oceanic .input-section textarea,
 .oceanic .input-section select,
 .oceanic .setting button {
@@ -302,19 +362,17 @@ header h1 {
     background: linear-gradient(to right, #f45b69, #daa03d);
     color: #222;
 }
-
 .sunset .app-container {
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
-
 .sunset header h1,
 .sunset .discussion-section h2,
 .sunset #what-if-section h2,
-.sunset #research-section h2{
+.sunset #research-section h2,
+.sunset .mood-sliders h2 {
     color: #36100d;
 }
-
 .sunset .input-section textarea,
 .sunset .input-section select,
 .sunset .setting button {
@@ -324,22 +382,20 @@ header h1 {
 }
 
 .cyberpunk {
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  color: #fff;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: #fff;
 }
-
 .cyberpunk .app-container {
-   background: rgba(36, 36, 62, 0.8);
+    background: rgba(36, 36, 62, 0.8);
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
-
 .cyberpunk header h1,
 .cyberpunk .discussion-section h2,
 .cyberpunk #what-if-section h2,
-.cyberpunk #research-section h2 {
-     color: #e91e63;
+.cyberpunk #research-section h2,
+.cyberpunk .mood-sliders h2 {
+    color: #e91e63;
 }
-
 .cyberpunk .input-section textarea,
 .cyberpunk .input-section select,
 .cyberpunk .setting button {
@@ -347,21 +403,25 @@ header h1 {
     border-color: #e91e63;
     color: #fff;
 }
-.cyberpunk .mood-sliders h2 {
-     color: #e91e63;
-}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     .app-container {
         width: 95%;
     }
-
     .setting {
         width: 100%;
     }
-
    .lawyer-card {
         width: calc(50% - 10px);
+    }
+    .mood-slider {
+      flex-direction: column;
+     }
+    .mood-slider label {
+        margin-bottom: 5px;
+    }
+    .mood-sliders {
+        padding: 0 5px;
     }
 }
