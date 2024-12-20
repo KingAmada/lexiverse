@@ -66,11 +66,11 @@ header h1 {
     margin-bottom: 15px;
 }
 
-
 .setting {
-  width: 100%;
-  margin-bottom: 15px;
+    width: 100%;
+    margin-bottom: 15px;
 }
+
 .setting label {
     display: block;
     margin-bottom: 5px;
@@ -90,6 +90,7 @@ header h1 {
 .setting button:hover {
     background-color: #2980b9;
 }
+
 
 /* Lawyer Profiles Styles */
 .lawyer-profiles {
@@ -138,6 +139,59 @@ header h1 {
     margin-top: 5px;
 }
 
+/* Progress Bar Styles */
+.progress-bar-container {
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.progress-bar {
+    display: flex;
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.phase {
+    flex: 1;
+    text-align: center;
+    line-height: 20px;
+    font-size: 0.8rem;
+    color: #555;
+    background-color: #f0f0f0;
+    position: relative;
+    padding: 8px 0;
+}
+
+.phase.active {
+    background-color: #3498db;
+    color: white;
+}
+/* What if section*/
+#what-if-section {
+    margin-bottom: 20px;
+     padding: 0 20px;
+}
+#what-if-section h2 {
+     margin-bottom: 15px;
+    color: #3498db;
+}
+#what-if-controls button {
+     background-color: #e74c3c;
+     color: white;
+    cursor: pointer;
+     transition: background-color 0.3s ease;
+    border: none;
+   padding: 8px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+#what-if-controls button:hover {
+    background-color: #c0392b;
+}
+
 /* Discussion Section Styles */
 .discussion-section {
     margin-top: 20px;
@@ -146,6 +200,17 @@ header h1 {
 }
 
 .discussion-section h2 {
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+/* Legal research section styles */
+#research-section {
+     margin-top: 20px;
+     border-top: 1px solid #ddd;
+     padding-top: 20px;
+}
+#research-section h2 {
     margin-bottom: 15px;
     color: #3498db;
 }
@@ -167,7 +232,9 @@ header h1 {
 }
 
 .dark header h1,
-.dark .discussion-section h2 {
+.dark .discussion-section h2,
+.dark #what-if-section h2,
+.dark #research-section h2 {
     color: #3498db;
 }
 
@@ -190,7 +257,9 @@ header h1 {
 }
 
 .oceanic header h1,
-.oceanic .discussion-section h2 {
+.oceanic .discussion-section h2,
+.oceanic #what-if-section h2,
+.oceanic #research-section h2 {
     color: #7ed4fb;
 }
 
@@ -213,7 +282,9 @@ header h1 {
 }
 
 .sunset header h1,
-.sunset .discussion-section h2 {
+.sunset .discussion-section h2,
+.sunset #what-if-section h2,
+.sunset #research-section h2{
     color: #36100d;
 }
 
@@ -230,7 +301,6 @@ header h1 {
     .app-container {
         width: 95%;
     }
-
     .setting {
         width: 100%;
     }
