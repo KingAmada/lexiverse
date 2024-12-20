@@ -1,0 +1,177 @@
+/* General Styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background 0.3s ease;
+}
+
+.app-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    width: 85%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3498db;
+}
+
+/* Input Section Styles */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-section textarea,
+.input-section select,
+.setting button {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    color: #333;
+    font-size: 1rem;
+}
+
+.input-section textarea:focus,
+.input-section select:focus,
+.setting button:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.input-section textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Settings Container */
+.settings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.setting {
+    width: calc(50% - 10px);
+    margin-bottom: 15px;
+}
+
+.setting label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.setting button {
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.setting button:hover {
+    background-color: #2980b9;
+}
+
+
+/* Discussion Section Styles */
+.discussion-section {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.discussion-section h2 {
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Theme Styles */
+.dark {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: #ecf0f1;
+}
+
+.dark .app-container {
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark header h1,
+.dark .discussion-section h2 {
+    color: #3498db;
+}
+
+.dark .input-section textarea,
+.dark .input-section select,
+.dark .setting button {
+    background: #34495e;
+    border-color: #555;
+    color: #ecf0f1;
+}
+
+.oceanic {
+    background: linear-gradient(to right, #00416A, #E4E5E6);
+    color: #ecf0f1;
+}
+
+.oceanic .app-container {
+    background: rgba(2, 37, 64, 0.8);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.oceanic header h1,
+.oceanic .discussion-section h2 {
+    color: #7ed4fb;
+}
+
+.oceanic .input-section textarea,
+.oceanic .input-section select,
+.oceanic .setting button {
+    background: #01254a;
+    border-color: #555;
+    color: #ecf0f1;
+}
+
+.sunset {
+    background: linear-gradient(to right, #f45b69, #daa03d);
+    color: #222;
+}
+
+.sunset .app-container {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.sunset header h1,
+.sunset .discussion-section h2 {
+    color: #36100d;
+}
+
+.sunset .input-section textarea,
+.sunset .input-section select,
+.sunset .setting button {
+    background: #ffdd59;
+    border-color: #555;
+    color: #222;
+}
