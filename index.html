@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +36,7 @@
                     </div>
                 </div>
                 <div class="setting">
-                     <label for="theme">Theme:</label>
+                    <label for="theme">Theme:</label>
                     <select id="theme">
                         <option value="light">Light</option>
                         <option value="dark">Dark</option>
@@ -50,14 +51,44 @@
             </div>
         </div>
 
+
+         <div class="progress-bar-container">
+          <div class="progress-bar" id="progress-bar">
+              <div class="phase active" data-phase="1">Initial Analysis</div>
+              <div class="phase" data-phase="2">Argument Development</div>
+              <div class="phase" data-phase="3">Strategy Formulation</div>
+           </div>
+         </div>
+
+
+       <div id="what-if-section" class="what-if-section hidden">
+                <h2>What-If Scenarios</h2>
+                <div id="what-if-controls">
+                    <button data-scenario="evidence">New Evidence</button>
+                    <button data-scenario="witness">New Witness</button>
+                    <button data-scenario="law">New Law</button>
+               </div>
+        </div>
+
+
         <div id="discussion-section" class="discussion-section hidden">
             <h2>Discussion</h2>
             <div id="discussion-text"></div>
+
+                <div id="research-section" class="research-section hidden">
+                 <h2>Legal Research</h2>
+                    <div id="research-content">
+                        <!-- Legal research content will appear here -->
+                    </div>
+               </div>
+
+
             <div id="strategy-section" class="strategy-section hidden">
                 <h2>Best Strategy</h2>
                 <p id="strategy-text"></p>
             </div>
         </div>
+
     </div>
     <script src="script.js"></script>
 </body>
